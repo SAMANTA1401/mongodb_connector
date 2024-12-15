@@ -1,16 +1,21 @@
 from setuptools import setup, find_packages
 from typing import List
 
-HYPEN_E_DOT = '-e .'
+HYPEN_E_DOT = '-e . '
 
 def get_requirement(file_path:str)->List[str] :
         requirements = []
         with open(file_path, 'r') as f:
             requirements = f.readlines()
-            rquirements = [req.replplace("\n", " ") for req in requirements]
+            requirements = [req.replace("\n", " ") for req in requirements]
+            print(requirements)
+            print('xxxx')
+            print(HYPEN_E_DOT)
 
-            if HYPEN_E_DOT in requirements:
-                requirements.remove(HYPEN_E_DOT)
+        if HYPEN_E_DOT in requirements:
+            requirements.remove(HYPEN_E_DOT)
+            print(requirements)
+
         return requirements 
 
 
@@ -31,7 +36,7 @@ setup(
     author_email=AUTHOR_EMAIL,
     description='A small package for mongodb connection',
     long_description=long_description,
-    long_description_content='text/markdown',
+    # long_description_content='text/markdown',
     url=f"https://github.com/{AUTHOR_USER_NAME}/{REPO_NAME}",
     project_urls={
         "Bug Tracker": f"https://github.com//{AUTHOR_USER_NAME}/{REPO_NAME}/issues",
