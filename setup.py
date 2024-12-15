@@ -3,20 +3,20 @@ from typing import List
 
 HYPEN_E_DOT = '-e . '
 
-def get_requirement(file_path:str)->List[str] :
-        requirements = []
-        with open(file_path, 'r') as f:
-            requirements = f.readlines()
-            requirements = [req.replace("\n", " ") for req in requirements]
-            print(requirements)
-            print('xxxx')
-            print(HYPEN_E_DOT)
+# def get_requirement(file_path:str)->List[str] :
+#         requirements = []
+#         with open(file_path, 'r') as f:
+#             requirements = f.readlines()
+#             requirements = [req.replace("\n", " ") for req in requirements]
+#             print(requirements)
+#             print('xxxx')
+#             print(HYPEN_E_DOT)
 
-        if HYPEN_E_DOT in requirements:
-            requirements.remove(HYPEN_E_DOT)
-            print(requirements)
+#         if HYPEN_E_DOT in requirements:
+#             requirements.remove(HYPEN_E_DOT)
+#             print(requirements)
 
-        return requirements 
+#         return requirements 
 
 
 with open('README.md', 'r', encoding='utf-8') as f:
@@ -43,5 +43,10 @@ setup(
     },
     package_dir={"": "src"},
     packages=find_packages(where="src"),
-    install_requires=get_requirement('requirements_dev.txt')
+    # extras_require={
+    #     'dev': [
+    #         # list your development requirements here
+    #     ]
+    # },
+    # install_requires=get_requirement('requirements_dev.txt')
 )
