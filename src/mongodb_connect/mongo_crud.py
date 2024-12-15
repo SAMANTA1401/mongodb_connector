@@ -76,3 +76,25 @@ class MongoDBOperation:
         datajson=json.loads(dataframe.to_json(orient='record'))
         collection=self.create_collection()
         collection.insert_many(datajson)
+
+    def find_one(self,collection_name:str,query:dict=None):
+        collection=self.create_collection(collection_name)
+        return collection.find_one(query)
+    
+
+    def find_all(self,collection_name:str,query:dict=None):
+        # collection=self.create_collection(collection_name)
+        if query:
+            return self.create_collection(collection_name).find(query)
+        else:
+            return self.create_collection(collection_name).find()
+        
+    def update(self,collection_name:str,query:dict,new_values:dict):
+        collection=self.create_collection(collection_name)
+        collection.update_one(query, new_values)
+
+    def delete(self,collection_name:str,query:dict):
+        collection=self.create_collection(collection_name)
+        collection.delete_one(query)
+
+    

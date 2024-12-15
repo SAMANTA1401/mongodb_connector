@@ -25,7 +25,7 @@ with open('README.md', 'r', encoding='utf-8') as f:
 
 __version__ = '0.0.1'
 REPO_NAME = 'mongodb_connector'
-PKG_NAME = 'mongodb_connect'
+PKG_NAME = 'mongopy_conn'
 AUTHOR_USER_NAME = 'SAMANTA1401'
 AUTHOR_EMAIL = 'psamanta1401@gmail.com'
 
