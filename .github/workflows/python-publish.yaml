@@ -44,7 +44,7 @@ jobs:
     - name: Build package
       run: python -m build
     - name: Publish package
-      uses: pypa/gh-action-pypi-publish@release/v3
+      uses: pypa/gh-action-pypi-publish@release/v1
       # uses: pypa/gh-action-pypi-deploy@v1
       with:
         user: __token__
