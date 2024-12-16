@@ -49,4 +49,5 @@ setup(
     #     ]
     # },
     # install_requires=get_requirement('requirements_dev.txt')
+    install_requires=['pymongo', 'pandas', 'numpy', 'python-dotenv', 'openpyxl','ensure','dnspython','pymongo[srv]']
 )
